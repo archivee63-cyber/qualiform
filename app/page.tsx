@@ -22,9 +22,9 @@ export default function LandingPage() {
   }, [])
 
   return (
-    <div className="bg-black text-white">
+    <div className="bg-neutral-950 text-white">
       <nav className={`fixed top-0 z-50 w-full transition-all duration-300 ${
-        scrolled ? 'border-b border-white/5 bg-black/90 backdrop-blur-xl' : 'bg-transparent'
+        scrolled ? 'border-b border-white/5 bg-neutral-950/80 backdrop-blur-xl' : 'bg-transparent'
       }`}>
         <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
           <span className="text-xl font-bold tracking-tight">Qualiform</span>
@@ -45,7 +45,7 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-4 py-1.5"
+            className="mb-8 inline-flex items-center gap-2 rounded-full border border-neutral-700/60 bg-neutral-900/80 px-4 py-1.5 backdrop-blur"
           >
             <Sparkles className="h-4 w-4 text-amber-400" />
             <span className="text-sm text-neutral-400">IA de recrutement</span>
@@ -81,7 +81,7 @@ export default function LandingPage() {
               Créer mon formulaire
               <ArrowRight className="h-5 w-5" />
             </Link>
-            <Link href="#demo" className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-800 bg-neutral-900 px-8 py-4 text-lg font-medium transition-all hover:bg-neutral-800">
+            <Link href="#demo" className="inline-flex items-center justify-center gap-2 rounded-full border border-neutral-700/60 bg-neutral-900/80 px-8 py-4 text-lg font-medium backdrop-blur transition-all hover:bg-neutral-800">
               Voir la démo
             </Link>
           </motion.div>
@@ -105,11 +105,13 @@ export default function LandingPage() {
           </motion.div>
         </motion.div>
 
-        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-500/5 via-transparent to-transparent" />
-        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent" />
+        <div className="pointer-events-none absolute left-1/2 top-1/3 h-[650px] w-[650px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[130px]" />
+        <div className="pointer-events-none absolute left-1/4 top-2/3 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="pointer-events-none absolute right-1/4 top-1/4 h-[350px] w-[350px] translate-x-1/2 rounded-full bg-cyan-500/5 blur-[120px]" />
       </section>
 
-      <section className="bg-neutral-950 px-6 py-32">
+      <section className="px-6 py-40">
         <div className="mx-auto max-w-5xl">
           <div className="grid items-center gap-16 md:grid-cols-2">
             <div>
@@ -121,7 +123,7 @@ export default function LandingPage() {
                 Lecture de CV, réponses aux formulaires, comparaison des profils. Un processus long, subjectif, qui vous fait passer à côté de talents.
               </p>
             </div>
-            <div className="rounded-3xl border border-neutral-800 bg-neutral-900 p-8">
+            <div className="rounded-3xl border border-neutral-700/60 bg-neutral-900/80 p-8 shadow-2xl shadow-black/40 backdrop-blur">
               <div className="space-y-4">
                 {['300+ CV pour un poste', '4h en moyenne de tri', '60% de bons profils ignorés'].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 text-neutral-400">
@@ -134,7 +136,7 @@ export default function LandingPage() {
           </div>
 
           <div className="mt-32 grid items-center gap-16 md:grid-cols-2">
-            <div className="order-2 rounded-3xl border border-neutral-800 bg-neutral-900 p-8 md:order-1">
+            <div className="order-2 rounded-3xl border border-neutral-700/60 bg-neutral-900/80 p-8 shadow-2xl shadow-black/40 backdrop-blur md:order-1">
               <div className="space-y-4">
                 {[
                   { icon: Zap, text: 'Scoring automatique par IA' },
@@ -161,7 +163,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section id="demo" className="px-6 py-32">
+      <section id="demo" className="px-6 py-40">
         <div className="mx-auto max-w-5xl">
           <div className="mb-20 text-center">
             <h2 className="mb-4 text-4xl font-bold">En trois étapes</h2>
@@ -198,7 +200,7 @@ export default function LandingPage() {
                 className="group relative"
               >
                 <div className="absolute inset-0 rounded-3xl bg-gradient-to-b from-neutral-800 to-neutral-900 opacity-0 transition-opacity group-hover:opacity-100" />
-                <div className="relative rounded-3xl border border-neutral-800 bg-neutral-900 p-8 transition-all group-hover:border-neutral-700">
+                <div className="relative rounded-3xl border border-neutral-700/60 bg-neutral-900/80 p-8 shadow-2xl shadow-black/40 backdrop-blur transition-all group-hover:border-neutral-600">
                   <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-xl font-bold text-black">
                     {item.step}
                   </div>
@@ -212,7 +214,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 px-6 py-32">
+      <section className="px-6 py-40">
         <div className="mx-auto max-w-3xl text-center">
           <div className="mb-6 flex justify-center">
             {[...Array(5)].map((_, i) => (
@@ -229,7 +231,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="px-6 py-32">
+      <section className="px-6 py-40">
         <div className="mx-auto max-w-5xl">
           <div className="mb-16 text-center">
             <h2 className="mb-4 text-4xl font-bold">Commencez gratuitement</h2>
@@ -237,7 +239,7 @@ export default function LandingPage() {
           </div>
 
           <div className="mx-auto grid max-w-3xl gap-6 md:grid-cols-2">
-            <div className="rounded-3xl border border-neutral-800 bg-neutral-900 p-8">
+            <div className="rounded-3xl border border-neutral-700/60 bg-neutral-900/80 p-8 shadow-2xl shadow-black/40 backdrop-blur">
               <div className="mb-2 text-sm text-neutral-500">Gratuit</div>
               <div className="mb-6 text-4xl font-bold">0€</div>
               <ul className="mb-8 space-y-3">
@@ -273,8 +275,9 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <section className="bg-neutral-950 px-6 py-32">
-        <div className="mx-auto max-w-3xl text-center">
+      <section className="relative px-6 py-40">
+        <div className="pointer-events-none absolute left-1/2 top-1/2 h-[500px] w-[700px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500/15 blur-[140px]" />
+        <div className="relative mx-auto max-w-3xl text-center">
           <h2 className="mb-6 text-4xl font-bold leading-tight md:text-5xl">
             Passez moins de temps à trier.
             <br />
@@ -283,7 +286,7 @@ export default function LandingPage() {
           <p className="mb-8 text-lg text-neutral-400">
             Créez votre premier formulaire intelligent en 5 minutes.
           </p>
-          <Link href="/signup" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-medium text-black transition-all hover:bg-neutral-200">
+          <Link href="/signup" className="inline-flex items-center gap-2 rounded-full bg-white px-8 py-4 text-lg font-medium text-black shadow-[0_0_50px_-5px_rgba(59,130,246,0.5)] transition-all hover:bg-neutral-200 hover:shadow-[0_0_60px_0px_rgba(59,130,246,0.6)]">
             Commencer maintenant
             <ArrowRight className="h-5 w-5" />
           </Link>
